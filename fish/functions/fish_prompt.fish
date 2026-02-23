@@ -1,6 +1,6 @@
 function fish_prompt --description 'Prompt ausgeben'
     set -l last_pipestatus $pipestatus
-    set -lx __fish_last_status $status # Export for __fish_print_pipestatus.
+    set -lx __fish_last_status $status # Export for __fish_rint_pipestatus.
     set -l normal (set_color normal)
     set -q fish_color_status
     or set -g fish_color_status red
@@ -27,5 +27,16 @@ function fish_prompt --description 'Prompt ausgeben'
     set -l statusb_color (set_color $bold_flag $fish_color_status)
     set -l prompt_status (__fish_print_pipestatus "[" "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
     
-    echo -n -s (set_color ff00ff) (date "+%H:%M:%S") $normal' > ' (prompt_login)' ' (set_color $color_cwd) (prompt_pwd) $normal (fish_vcs_prompt) $normal " "$prompt_status $suffix " "
+    #First line
+    set_color green
+    echo -n (date "+%H:%M:%S")
+    set_color normal
+    echo -n " ❯ "(whoami)"@"(hostname)" ❯ "
+    set_color blue
+    echo -n "﹝" (prompt_pwd) "﹞"
+    set_color normal
+    echo (fish_vcs_prompt) $normal $prompt_status
+    
+    #Second line
+    echo -n "⮡"
 end
