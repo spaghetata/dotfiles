@@ -1,6 +1,6 @@
 function fish_prompt --description 'Prompt ausgeben'
     set -l last_pipestatus $pipestatus
-    set -lx __fish_last_status $status # Export for __fish_rint_pipestatus.
+    set -lx __fish_last_status $status # Export for __fish_print_pipestatus.
     set -l normal (set_color normal)
     set -q fish_color_status
     or set -g fish_color_status red
