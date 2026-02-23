@@ -1,2 +1,2 @@
-# .config
-Repo for my arch configurations
+# dotfiles
+Repo of my linux dotfiles
