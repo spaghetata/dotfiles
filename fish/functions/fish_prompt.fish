@@ -27,7 +27,7 @@ function fish_prompt --description 'Prompt ausgeben'
     set -l statusb_color (set_color $bold_flag $fish_color_status)
     set -l prompt_status (__fish_print_pipestatus "[" "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
     
-    #First line
+    # First line
     set_color green
     echo -n (date "+%H:%M:%S")
     set_color normal
@@ -37,6 +37,6 @@ function fish_prompt --description 'Prompt ausgeben'
     set_color normal
     echo (fish_vcs_prompt) $normal $prompt_status
     
-    #Second line
+    # Second line
     echo -n \u2192" "
 end
