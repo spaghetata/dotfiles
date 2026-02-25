@@ -31,9 +31,9 @@ function fish_prompt --description 'Prompt ausgeben'
     set_color green
     echo -n (date "+%H:%M:%S")
     set_color normal
-    echo -n " ❯ "(whoami)"@"(hostname)" ❯ "
+    echo -n " "\u2771" "(whoami)"@"(hostname)" "\u2771" "
     set_color blue
-    echo -n "﹝" (prompt_pwd) "﹞"
+    echo -n \u3014" "(prompt_pwd)" "\u3015
     set_color normal
     echo (fish_vcs_prompt) $normal $prompt_status
     
