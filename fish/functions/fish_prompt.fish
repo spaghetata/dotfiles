@@ -38,5 +38,5 @@ function fish_prompt --description 'Prompt ausgeben'
     echo (fish_vcs_prompt) $normal $prompt_status
     
     # Second line
-    echo -n \u2b95" "
+    echo -n \u27a4" "
 end
